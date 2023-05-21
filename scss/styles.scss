@@ -1,0 +1,59 @@
+@use "variables";
+
+body {
+  background-color: $background-color;
+  font-family: $font-stack;
+}
+
+.grid_container {
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  justify-content: center;
+  min-height: 100vh;
+
+  button {
+    background-color: $secundary-color;
+    border: none;
+    color: $font-color;
+    cursor: pointer;
+    font-size: 2rem;
+    outline: none;
+
+    &:hover {
+      background-color: $background-hover;
+      color: $font-color-hover;
+    }
+  }
+
+  .operator {
+    background-color: $primary-color;
+  }
+
+  .span_two {
+    grid-column: span 2;
+  }
+
+  .output {
+    align-items: flex-end;
+    background: $display-color;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+
+    .previous_operand {
+      color: $previous-operand;
+      font-size: 1.5rem;
+    }
+
+    .current_operand {
+      color: $font-color;
+      font-size: 2.5rem;
+    }
+  }
+}
